@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../config/supabase';
 import { useAuth } from '../contexts/AuthContext';
-import './Forum.css';
+//import './Forum.css';
 
 const Forum = () => {
   const { user } = useAuth();
