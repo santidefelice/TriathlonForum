@@ -22,7 +22,7 @@ const Register = () => {
 
       // Create profile
       const { error: profileError } = await supabase
-        .from('profiles')
+        .from('user')
         .insert([{ id: authData.user.id, username }]);
 
       if (profileError) throw profileError;

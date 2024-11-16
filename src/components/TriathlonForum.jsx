@@ -34,6 +34,11 @@ const Forum = () => {
 
       if (error) throw error;
       setCategories(data);
+
+      if (data.length > 0 && selectedCategory === null) {
+        setSelectedCategory(data[0].id);
+      }
+
     } catch (error) {
       console.error('Error fetching categories:', error.message);
     }
@@ -50,7 +55,7 @@ const Forum = () => {
           replies:replies(count),
           likes:likes(count)
         `)
-        .eq('category_id', categorySlug)
+//        .eq('category_id', categorySlug)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
